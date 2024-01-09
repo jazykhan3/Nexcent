@@ -5,25 +5,17 @@ import React from "react";
 
 interface Review {
   imageSrc: string;
-  date: string;
   title: string;
   content: string;
-  onClick?: () => void;
 }
-const ReviewCard: React.FC<Review> = ({ imageSrc, date, title, content ,onClick}) => (
-  <div className="rounded-2xl md:w-[24.625rem] border border-solid border-[#25314640] p-3">
+const ReviewCard: React.FC<Review> = ({ imageSrc, title, content }) => (
+  <div className=" md:w-[22.75rem] flex flex-col items-center border border-solid border-[#25314640]">
     <Image alt="" src={imageSrc} height={280} width={400} />
-    <p className="text-[#253146CC] text-base font-light italic my-3">
-      {date}
-    </p>
-    <p className="text-[#253146] font-medium text-xl">
+   <p className="text-[#000000] my-2 font-medium text-base">
       {title}
     </p>
-    <p className="text-[#253146CC] text-base font-normal my-3">
+    <p className="font-avenir px-3 text-[#263238] text-sm font-normal my-2">
       {content}
-    </p>
-    <p className="text-[#253146] font-bold text-base underline my-3 cursor-pointer" onClick={onClick}>
-      Read More
     </p>
   </div>
 );
@@ -32,57 +24,37 @@ const PopularReviews: React.FC = () => {
   const router = useRouter();
   const reviews: Review[] = [
     {
-      imageSrc: "/review1.png",
-      date: "Inkmattic - February 10, 2022",
-      title: "M1 Finance vs Webull: Which Finance Platform Is the Best?",
-      content: "Stock brokerage firms have been undergoing a quiet revolution...",
+      imageSrc: "/blog1.png",
+      title: "Managing your money with a budget",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      imageSrc: "/review2.png",
-      date: "Inkmattic - October 24, 2022",
-      title: "Freetrade SIPPs | Everything You Need To Know!",
-      content: "There have been a lot of rumours on the internet that the top commission-free brokerage platforms in the UK are planning to offer SIPPs....",
+      imageSrc: "/blog2.png",
+      title: "Managing your money with a budget",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-        imageSrc: "/review3.png",
-        date: "Inkmattic - May 14, 2022",
-        title: "Is the eToro CopyTrader tool too good to be true?",
-        content: "If you’ve ever searched the term ‘trading’ on Google or YouTube, you’ll probably have seen eToro’s eye-catching lime-green...",
-      },  {
-        imageSrc: "/review4.png",
-        date: "Inkmattic - February 26, 2022",
-        title: "CIRCA5000 Review | Easy Ethical Investing",
-        content: "What is CIRCA5000? CIRCA5000 formally Tickr is an investment app that aims to bring the idea of impactful investing to the normal retail...",
-      },  {
-        imageSrc: "/review5.png",
-        date: "Inkmattic - August 1, 2022",
-        title: "Trading 212 Review [2022]: The Best Investing Platform Right Now!",
-        content: "What is Trading 212? Trading 212 is quickly growing as one of the most used brokerage platforms in the UK...",
-      },  {
-        imageSrc: "/review6.png",
-        date: "Inkmattic - May 5, 2022",
-        title: "Shares Review: The Best Social Investing App Will Change Your World",
-        content: "Every so often, an app, idea, or website comes along that has the potential to revolutionize an industry. Facebook, for example...",
-      },
+        imageSrc: "/blog3.png",
+        title: "Managing your money with a budget",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      }
   ];
 
   return (
-    <div className="w-4/5 mx-auto flex items-center flex-col mb-20">
-      <p className="text-center text-[#253146] text-4xl font-medium">
-        Popular Reviews
-      </p>
+    <div className="w-10/12 mx-auto flex items-center flex-col mb-20">
+      <p className="text-center  text-4xl font-medium">
+      Check out our feature blog post      </p>
+      <p className="text-base font-normal text-center md:w-[40rem] mt-[1rem]">The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
 
       <div className="my-10 flex flex-wrap gap-[30px] justify-between">
         {reviews.map((review, index) => (
-          <ReviewCard key={index} {...review} onClick={()=>{router.push('/review-detail-page')}}/>
+          <ReviewCard key={index} {...review} />
         ))}
       </div>
       <button
-          style={{ borderRadius: 50 }}
-          className="text-white border-radius-50 py-3 px-8 bg-[#253146] "
-          onClick={()=>{router.push('/reviews-page')}}
+          className="text-white rounded text-xl font-normal font-avenir py-3 px-8 bg-black "
         >
-          View More
+          Read More Blog Posts
         </button>
     </div>
   );
