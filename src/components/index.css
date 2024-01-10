@@ -6,3 +6,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.mortgageForm .ant-input-number .ant-input-number-input {
+    height: 56px;
+    border: 2px solid #4D4D4D !important;
+}
+.mortgageForm .ant-form-item-label > label {
+    font-size: 18px;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+    color:#263238;
+}
