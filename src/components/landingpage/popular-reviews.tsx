@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 interface Review {
@@ -9,9 +8,9 @@ interface Review {
   content: string;
 }
 const ReviewCard: React.FC<Review> = ({ imageSrc, title, content }) => (
-  <div className=" md:w-[22.75rem] flex flex-col items-center border border-solid border-[#25314640]">
+  <div className=" md:w-[22.75rem] flex flex-col items-start border border-solid border-[#25314640]">
     <Image alt="" src={imageSrc} height={280} width={400} />
-   <p className="text-[#000000] my-2 font-medium text-base">
+   <p className="text-[#000000] px-3 my-2 font-medium text-base">
       {title}
     </p>
     <p className="font-avenir px-3 text-[#263238] text-sm font-normal my-2">
@@ -21,7 +20,6 @@ const ReviewCard: React.FC<Review> = ({ imageSrc, title, content }) => (
 );
 
 const PopularReviews: React.FC = () => {
-  const router = useRouter();
   const reviews: Review[] = [
     {
       imageSrc: "/blog1.png",
@@ -42,17 +40,17 @@ const PopularReviews: React.FC = () => {
 
   return (
     <div className="w-10/12 mx-auto flex items-center flex-col mb-20">
-      <p className="text-center  text-4xl font-medium">
+      <p className="text-center  text-2xl md:text-4xl font-medium">
       Check out our feature blog post      </p>
-      <p className="text-base font-normal text-center md:w-[40rem] mt-[1rem]">The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
+      <p className="text-sm md:text-base font-normal text-center md:w-[40rem] mt-[1rem]">The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
 
-      <div className="my-10 flex flex-wrap gap-[30px] justify-between">
+      <div className="my-6 md:my-10 flex flex-wrap gap-[30px] justify-between">
         {reviews.map((review, index) => (
           <ReviewCard key={index} {...review} />
         ))}
       </div>
       <button
-          className="text-white rounded text-xl font-normal font-avenir py-3 px-8 bg-black "
+          className="text-white rounded text-base md:text-xl font-normal font-avenir py-3 px-8 bg-black "
         >
           Read More Blog Posts
         </button>

@@ -7,8 +7,8 @@ import React from "react";
 const CalculatorSection = () => {
   const content = Array.from({ length: 10 }, (_, index) => (
     <div key={index} >
-      <p className="text-3xl font-avenir font-extrabold mb-3">All calculators</p>
-      <p className="font-avenir font-normal text-2xl mb-5">
+      <p className="text-xl md:text-3xl font-avenir font-extrabold mb-3">All calculators</p>
+      <p className="font-avenir font-normal text-base md:text-2xl mb-5">
         Mortgages are some of the biggest commitments you’ll make in your financial life.
         And with all the options, it can be hard to work out what they’ll cost you.
         Our mortgage calculator can help.
@@ -20,10 +20,10 @@ const CalculatorSection = () => {
 };
 function ReviewDetailPage() {
   return (
-    <div className="m-auto w-10/12">
-    <div className="my-[50px] mx-[2.5rem] flex flex-col items-center">
-      <p className="text-4xl font-avenir font-semibold mb-4 text-center">All Calculators and tools</p>
-      <p className="font-avenir font-normal text-2xl text-center ">
+    <div className="mx-auto w-10/12">
+    <div className="my-[50px] mx-[0rem] md:mx-[2.5rem] flex flex-col items-center">
+      <p className="text-xl md:text-4xl font-avenir font-semibold mb-4 text-center">All Calculators and tools</p>
+      <p className="font-avenir font-normal text-base md:text-2xl text-center ">
         Mortgages are some of the biggest commitments you’ll make in your
         financial life. And with all the options, it can be hard to work out
         what they’ll cost you. Our mortgage calculator can help.

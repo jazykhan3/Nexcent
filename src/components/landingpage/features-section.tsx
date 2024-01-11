@@ -7,8 +7,10 @@ interface FeatureItemProps {
 const FeatureItem = ({ iconSrc, text }: FeatureItemProps) => (
   <div className="w-[15rem] flex flex-col items-center gap-[1.25rem]">
   
-      <Image width={107} height={31} src={iconSrc} alt={`Feature icon for ${text}`} />
-    <p className="font-avenir text-[#263238] text-center text-sm font-normal">{text}</p>
+      <Image width={107} height={31} src={iconSrc} className="md:block hidden"  alt={`Feature icon for ${text}`} />
+      <Image width={100} height={31} src={iconSrc} className="md:hidden " alt={`Feature icon for ${text}`} />
+
+    <p className="hidden md:block font-avenir text-[#263238] text-center text-sm font-normal">{text}</p>
   </div>
 );
 
@@ -22,7 +24,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <div className="w-5/5 md:w-4/5 px-4 md:px-0 mx-auto my-[1rem] gap-[20px] md:gap-[0px] flex justify-center md:justify-between flex-wrap">
+    <div className="w-5/5 md:w-4/5 px-4 md:px-0 mx-auto my-[1rem] gap-[20px] md:gap-[0px] flex justify-center md:justify-between md:flex-wrap">
       {features.map((feature, index) => (
         <FeatureItem key={index} {...feature} />
       ))}

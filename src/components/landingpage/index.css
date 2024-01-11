@@ -9,6 +9,7 @@
 .searchBar{
     .ant-input-affix-wrapper{
           border: 2px solid #4D4D4D !important;
+          padding: 5px !important;
           & > .ant-input {
             font-weight: 400;
             font-family: 'Avenir', sans-serif;

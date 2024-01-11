@@ -28,7 +28,7 @@ const resultsData: ResultItem[] = [
 ];
 
 const CalculatorCard: React.FC<{ title: string }> = ({ title }) => (
-  <div className="rounded border text-center border-[2c2c2c33] w-[16rem] px-6 py-4 bg-[#F3F3EE] text-[#2E2E27] text-xl font-normal font-avenir">
+  <div className="rounded border text-center border-[2c2c2c33] w-[10rem] md:w-[16rem] px-2 md:px-6 py-4 bg-[#F3F3EE] text-[#2E2E27] text-sm md:text-xl font-normal font-avenir">
     {title}
   </div>
 );
@@ -37,32 +37,32 @@ function MortgageCalculator() {
   return (
     <div className="m-auto w-10/12">
       <div className="my-[50px]">
-        <p className="text-4xl text-center md:text-left font-avenir font-semibold mb-4">Mortgage calculator</p>
-        <p className="font-avenir text-center md:text-left font-normal text-2xl">
+        <p className="text-xl md:text-4xl text-center md:text-left font-avenir font-semibold mb-4">Mortgage calculator</p>
+        <p className="font-avenir text-center md:text-left font-normal text-lg md:text-2xl">
           Mortgages are some of the biggest commitments you’ll make in your
           financial life. And with all the options, it can be hard to work out
           what they’ll cost you. Our mortgage calculator can help.
         </p>
         <div className="w-4/4 my-[64px] flex flex-col md:flex-row">
-          <div className="w-4/4 md:w-2/4 bg-[#FBFBF9] p-[40px]">
+          <div className="w-4/4 md:w-2/4 bg-[#FBFBF9] p-[10px] md:p-[40px]">
             <MortgageForm />
           </div>
           <div className="w-4/4 md:w-2/4 bg-[#F3F3EE] p-[40px]">
-            <p className="text-2xl font-extrabold mb-3">Your Results</p>
+            <p className="text-lg md:text-2xl font-extrabold mb-3">Your Results</p>
             {resultsData.map((result, index) => (
               <div key={index} className="flex flex-col gap-[10px] mb-[22px]">
-                <p className="text-xl font-extrabold">{result.title}</p>
-                <p className="text-3xl font-bold font-lato">
+                <p className="text-base md:text-xl font-extrabold">{result.title}</p>
+                <p className="text-xl md:text-3xl font-bold font-lato">
                   {result.amount}
-                  <span className="ml-2 font-avenir text-xl font-normal">per month</span>
+                  <span className="ml-2 font-avenir text-base md:text-xl font-normal">per month</span>
                 </p>
                 <p className="font-base font-normal font-avenir">{result.description}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-[1.25rem] my-[5rem]" > <p className="font-normal text-3xl" >More financial tools/calculator</p>
-        <div className="w-4/4  flex flex-wrap gap-[3rem] justify-between">
+        <div className="flex flex-col gap-[1.25rem] my-[5rem]" > <p className="font-normal text-xl md:text-3xl" >More financial tools/calculator</p>
+        <div className="w-4/4  flex flex-wrap gap-[10px] md:gap-[3rem] justify-between">
           <CalculatorCard title="Credit Card Calculator" />
           <CalculatorCard title="Mortgage Calculator" />
           <CalculatorCard title="Networth Calculator" />

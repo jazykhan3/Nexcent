@@ -35,7 +35,7 @@ function Navbar() {
   );
 
   return (
-    <div className="w-full border-b border-[#00000026]">
+    <div className="w-full border-b border-[#00000026] sticky bg-white z-[1] top-0">
       <div className="h-[5.25rem] mx-auto w-10/12 flex items-center justify-between">
         <Image
           src="/logo.png"

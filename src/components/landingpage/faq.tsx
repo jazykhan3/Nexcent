@@ -22,10 +22,10 @@ function Faq() {
   ];
 
   return (
-    <div className='md:w-[56rem] mx-auto flex flex-col gap-[1.875rem] items-center'>
-        <p className="text-center  text-4xl font-semibold">
+    <div className='md:w-[56rem] mx-3 md:mx-auto flex flex-col gap-[1.875rem] items-center'>
+        <p className="text-center  text-xl md:text-4xl font-semibold">
         Our FAQs     </p>
-      <p className="text-2xl font-avenir font-normal text-center md:w-[52rem] mt-[1rem]">Mortgages are some of the biggest commitments you’ll make in your financial life. And with all the options, it can be hard to work out what they’ll cost you. Our mortgage calculator can help.</p>
+      <p className="text-lg md:text-2xl font-avenir font-normal text-center md:w-[52rem] mt-[1rem]">Mortgages are some of the biggest commitments you’ll make in your financial life. And with all the options, it can be hard to work out what they’ll cost you. Our mortgage calculator can help.</p>
 
       {faqData.map((faq, index) => (
         <CustomCollapse key={index} title={faq.title}>
@@ -33,7 +33,7 @@ function Faq() {
         </CustomCollapse>
       ))}
            <button
-          className="text-white rounded text-xl my-[2rem] font-normal font-avenir py-3 px-8 bg-black "
+          className="text-white rounded text-base md:text-xl my-[2rem] font-normal font-avenir py-3 px-8 bg-black "
         >
 Read All FAQs        </button>
     </div>
